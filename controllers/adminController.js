@@ -54,6 +54,7 @@ module.exports = {
       res.redirect('/admin/dashboard');
 
     } catch (error) {
+      console.log(error);
       res.redirect('/admin/signin');
     }
   },
@@ -271,6 +272,7 @@ module.exports = {
         res.redirect('/admin/item');
       }
     } catch (error) {
+      console.log(error)
       req.flash('alertMessage', `${error.message}`);
       req.flash('alertStatus', 'danger');
       res.redirect('/admin/item');
